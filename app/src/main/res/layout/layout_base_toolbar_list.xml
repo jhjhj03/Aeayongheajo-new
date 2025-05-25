@@ -60,10 +60,47 @@
                 android:layout_marginEnd="12dp" />
 
             <TextView
+                android:id="@+id/text_playlist_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="지독한 짝사랑 플리"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- 재생 버튼 -->
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play_circle"
+                android:contentDescription="재생"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@drawable/playlist_item_bg"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sample_thumb"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="카페에서 듣기 좋은 플리"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -73,7 +110,6 @@
                 android:src="@drawable/ic_play"
                 android:contentDescription="재생" />
         </LinearLayout>
-
         <!-- 다른 항목도 위와 같이 반복 -->
     </LinearLayout>
 
