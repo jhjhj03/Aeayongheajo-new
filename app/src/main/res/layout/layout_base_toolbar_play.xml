@@ -35,7 +35,7 @@
             android:visibility="invisible"/>
     </LinearLayout>
 
-    <!-- 플레이리스트 재생 화면 -->
+    <!-- 플레이리스트 재생 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,13 +56,34 @@
             android:textSize="16sp"
             android:layout_marginTop="12dp" />
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="재생"
-            android:drawableEnd="@drawable/ic_download"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="재생"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp" />
+            <!-- 여백 조절, 0~4dp 정도로 조절 가능 -->
+
+            <ImageView
+                android:layout_width="65px"
+                android:layout_height="65px"
+                android:src="@drawable/ic_download"
+                android:contentDescription="다운로드 아이콘"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
