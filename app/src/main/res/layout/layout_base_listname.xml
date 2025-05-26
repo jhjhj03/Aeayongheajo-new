@@ -25,20 +25,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="추천 플레이리스트"
+            android:text="완성된 추천 플레이리스트"
             android:gravity="center"
-            android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20sp"/>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="리프레시"
-            android:src="@drawable/ic_refresh" />
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <!-- 중간 내용 영역: 필요하면 여기에 FrameLayout이나 include 삽입 -->
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
