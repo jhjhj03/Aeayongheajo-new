@@ -1,0 +1,279 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- 상단 툴바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="뒤로가기"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="설문조사"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- 질문 및 장르 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 질문 아이콘 및 텍스트 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_question" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="어떤 분위기를 선호하시나요?"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- 장르 버튼 6행 2열 -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="6"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="사랑"
+                android:backgroundTint="#FFB3B3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="짝사랑"
+                android:backgroundTint="#FFC6B3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="산책"
+                android:backgroundTint="#FFD9B3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="운동"
+                android:backgroundTint="#FFECB3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="카페"
+                android:backgroundTint="#EEB764"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="드라이브"
+                android:backgroundTint="#FFFFB3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="비오는 날"
+                android:backgroundTint="#ECFFB3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="해외 팝"
+                android:backgroundTint="#D9FFB3"
+                android:onClick="onGenreClick"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"/>
+
+
+
+
+        </GridLayout>
+        <!--        <GridLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:columnCount="2"-->
+        <!--            android:rowCount="6"-->
+        <!--            android:alignmentMode="alignMargins"-->
+        <!--            android:rowOrderPreserved="false"-->
+        <!--            android:useDefaultMargins="true">-->
+
+        <!--            <Button-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 발라드"-->
+        <!--                android:backgroundTint="#FFB6B6"-->
+        <!--                android:onClick="onGenreClick"-->
+        <!--                android:layout_columnWeight="1"-->
+        <!--                android:layout_margin="8dp"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 발라드"-->
+        <!--                android:backgroundTint="#FFB6B6"-->
+        <!--                android:onClick="onGenreClick"-->
+        <!--                android:layout_columnWeight="1"-->
+        <!--                android:layout_margin="8dp"/>-->
+
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 발라드"-->
+        <!--                android:backgroundTint="#FFB6B6"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="해외 팝"-->
+        <!--                android:backgroundTint="#FFB6B6"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 댄스/일렉"-->
+        <!--                android:backgroundTint="#FFE0A3"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 알앤비"-->
+        <!--                android:backgroundTint="#FFE0A3"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 힙합"-->
+        <!--                android:backgroundTint="#FFCC80"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="트로트"-->
+        <!--                android:backgroundTint="#FFCC80"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="해외 알앤비"-->
+        <!--                android:backgroundTint="#D4FFAB"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="해외 힙합"-->
+        <!--                android:backgroundTint="#D4FFAB"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="국내 인디"-->
+        <!--                android:backgroundTint="#A3D4FF"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--            <Button-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="OST/BGM"-->
+        <!--                android:backgroundTint="#A3D4FF"-->
+        <!--                android:onClick="onGenreClick"/>-->
+        <!--        </GridLayout>-->
+    </LinearLayout>
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F5F5F5"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:contentDescription="홈"
+            android:src="@drawable/ic_home"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:contentDescription="이전"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:contentDescription="다음"
+            android:src="@drawable/ic_next"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:contentDescription="플레이리스트"
+            android:src="@drawable/ic_list"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+</LinearLayout>
