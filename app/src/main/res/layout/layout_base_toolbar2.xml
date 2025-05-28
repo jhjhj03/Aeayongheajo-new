@@ -15,7 +15,6 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/btnBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:contentDescription="뒤로가기"
@@ -25,17 +24,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="추천 플레이리스트"
+            android:text="플레이리스트 제작 중"
             android:gravity="center"
-            android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20sp"/>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="리프레시"
-            android:src="@drawable/ic_refresh" />
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <!-- 중간 내용 영역: 필요하면 여기에 FrameLayout이나 include 삽입 -->
@@ -68,6 +60,7 @@
             android:src="@drawable/ic_home" />
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="4dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
