@@ -1,6 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mood"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -78,10 +79,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FFB3B3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="사랑"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -89,10 +93,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FFC6B3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="썸&amp;짝사랑"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -100,10 +107,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FFD9B3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="이별"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -111,10 +121,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FFECB3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="산책"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -122,10 +135,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#EEB764"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="운동"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -133,10 +149,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FFFFB3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="카페"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -144,10 +163,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#ECFFB3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="드라이브"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
 
             <Button
                 android:layout_width="0dp"
@@ -155,10 +177,13 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 android:backgroundTint="#D9FFB3"
-                android:onClick="onGenreClick"
+                android:onClick="onMoodClick"
                 android:text="비오는 날"
                 android:textSize="17sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
         </GridLayout>
 
     </LinearLayout>
@@ -172,35 +197,64 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onHomeClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="홈"
-            android:src="@drawable/ic_home"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onBackClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="이전"
-            android:src="@drawable/ic_back"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onNextClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="다음"
-            android:src="@drawable/ic_next"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onPlaylistClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="플레이리스트"
-            android:src="@drawable/ic_list"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_list" />
     </LinearLayout>
+
 </LinearLayout>

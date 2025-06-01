@@ -1,0 +1,145 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appStart"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- 상단 툴바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="뒤로가기"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="메인"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- 중간 내용 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- 헤드폰 이미지-->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/ic_headphones"
+            android:contentDescription="음악 아이콘"
+            android:scaleType="fitCenter" />
+
+        <!-- 플레이리스트 생성 버튼 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_create_playlist"
+            android:layout_width="325dp"
+            android:layout_height="90dp"
+            android:text="플레이리스트 생성"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:padding="12dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#2978B8"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- 플레이리스트 보기 버튼 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_playlist"
+            android:layout_width="325dp"
+            android:layout_height="90dp"
+            android:text="플레이리스트"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:padding="12dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#2978B8" />
+
+    </LinearLayout>
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F5F5F5"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="홈"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="이전"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="다음"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next" />
+
+        <ImageView
+            android:onClick="onPlaylistClicked"
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="플레이리스트"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_list" />
+    </LinearLayout>
+</LinearLayout>
