@@ -15,6 +15,7 @@
         android:gravity="center_vertical">
 
         <ImageView
+            android:id="@+id/backButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_back"
@@ -43,6 +44,7 @@
         android:padding="16dp">
 
         <LinearLayout
+            android:id="@+id/playlist_item_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -53,6 +55,7 @@
             android:focusable="true">
 
             <ImageView
+                android:id="@+id/tvPlaylistTitle"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/sample_thumb"
@@ -74,12 +77,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_play_circle"
+                android:src="@drawable/ic_play"
                 android:contentDescription="재생"
                 android:padding="4dp" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/playlist_item_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -104,11 +108,86 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_play"
-                android:contentDescription="재생" />
+                android:contentDescription="재생"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playlist_item_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@drawable/playlist_item_bg"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sample_thumb"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="공부할 때 듣는 집중 음악"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_play_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play"
+                android:contentDescription="재생"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playlist_item_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@drawable/playlist_item_bg"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sample_thumb"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="새벽 감성 잔잔한 곡들"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_play_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play"
+                android:contentDescription="재생"
+                android:padding="4dp" />
         </LinearLayout>
         <!-- 다른 항목도 위와 같이 반복 -->
     </LinearLayout>
