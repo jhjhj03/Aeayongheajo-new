@@ -16,15 +16,17 @@
         tools:targetApi="31">
 
         <!-- 메인 시작 액티비티 -->
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity android:name=".activity.AppStartActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MoodActivity" android:exported="false" />
+        <activity android:name=".activity.GenreActivity" android:exported="false"/>
+        <activity android:name=".activity.RecommendResultActivity" android:exported="false"/>
+        <activity android:name=".activity.PlaylistNameActivity" android:exported="false"/>
 
-        <!-- 추가: 로딩 액티비티 -->
-       <!-- <activity android:name=".LoadingActivity" android:exported="false" /> -->
 
     </application>
 
