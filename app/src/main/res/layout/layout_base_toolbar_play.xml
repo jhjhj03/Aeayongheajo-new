@@ -1,178 +1,161 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
+    <!-- 상단 툴바 -->
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
-        <!-- 상단 툴바 -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="뒤로가기" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="플레이리스트"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <!-- 플레이리스트 재생 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sample_album" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="데일리로 듣기 좋은 감성 힙합"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
         <LinearLayout
-            android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/backButton"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_back"
-                android:contentDescription="뒤로가기" />
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true">
 
             <TextView
-                android:id="@+id/toolbarTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="플레이리스트"
-                android:textSize="18sp"
-                android:gravity="center"
-                android:textStyle="bold" />
-
-            <View
-                android:id="@+id/toolbarRightSpacer"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:visibility="invisible"/>
-        </LinearLayout>
-
-        <!-- 플레이리스트 재생 -->
-        <LinearLayout
-            android:id="@+id/playlistSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:padding="16dp">
-
-            <ImageView
-                android:id="@+id/albumImage"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sample_album" />
-
-            <TextView
-                android:id="@+id/playlistTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="데일리로 듣기 좋은 감성 힙합"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
+                android:text="재생"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp" />
+            <!-- 여백 조절, 0~4dp 정도로 조절 가능 -->
 
-            <LinearLayout
-                android:id="@+id/playButtonLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/rounded_button"
-                android:padding="12dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:id="@+id/playText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="재생"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginEnd="4dp" />
-
-                <ImageView
-                    android:id="@+id/downloadIcon"
-                    android:layout_width="65px"
-                    android:layout_height="65px"
-                    android:contentDescription="다운로드 아이콘"
-                    android:scaleType="fitCenter" />
-            </LinearLayout>
+            <ImageView
+                android:layout_width="65px"
+                android:layout_height="65px"
+                android:src="@drawable/ic_download"
+                android:contentDescription="다운로드 아이콘"
+                android:scaleType="fitCenter" />
         </LinearLayout>
 
-        <!-- 중간 여백용 뷰 -->
-        <View
-            android:id="@+id/middleSpacer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <!-- 하단 네비게이션 바 -->
-        <LinearLayout
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="#F5F5F5"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/navHome"
-                android:layout_width="4dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="홈"
-                android:gravity="center"
-                android:maxWidth="20dp"
-                android:maxHeight="20dp"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_home" />
-
-            <ImageView
-                android:id="@+id/navBack"
-                android:layout_width="4dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="이전"
-                android:gravity="center"
-                android:maxWidth="20dp"
-                android:maxHeight="20dp"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_back" />
-
-            <ImageView
-                android:id="@+id/navNext"
-                android:layout_width="4dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="다음"
-                android:gravity="center"
-                android:maxWidth="20dp"
-                android:maxHeight="20dp"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_next" />
-
-            <ImageView
-                android:id="@+id/navPlaylist"
-                android:layout_width="4dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="플레이리스트"
-                android:gravity="center"
-                android:maxWidth="20dp"
-                android:maxHeight="20dp"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_list" />
-        </LinearLayout>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- 중간 내용 영역: 필요하면 여기에 FrameLayout이나 include 삽입 -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F5F5F5"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="홈"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="이전"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="다음"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="플레이리스트"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_list" />
+    </LinearLayout>
+</LinearLayout>
