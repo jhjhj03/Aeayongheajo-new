@@ -17,9 +17,10 @@ public class SpotifyRepository {
         apiService = retrofit.create(SpotifyApiService.class);
     }
 
-    public void fetchRecommendations(String token, String genre, float energy, float valence, int limit, Callback<RecommendationResponse> callback) {
+    public void fetchPlaylistTracks(String token, String playlistId, Callback<PlaylistTracksResponse> callback) {
         String authHeader = "Bearer " + token;
-        Call<RecommendationResponse> call = apiService.getRecommendations(authHeader, genre, energy, valence, limit);
+        Call<PlaylistTracksResponse> call = apiService.getPlaylistTracks(authHeader, playlistId);
         call.enqueue(callback);
     }
+
 }

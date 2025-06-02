@@ -3,15 +3,13 @@ package com.example.aeayongheajo;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface SpotifyApiService {
-    @GET("v1/recommendations")
-    Call<RecommendationResponse> getRecommendations(
+    @GET("v1/playlists/{playlist_id}/tracks")
+    Call<PlaylistTracksResponse> getPlaylistTracks(
             @Header("Authorization") String authHeader,
-            @Query("seed_genres") String genre,
-            @Query("target_energy") float energy,
-            @Query("target_valence") float valence,
-            @Query("limit") int limit
+            @Path("playlist_id") String playlistId
     );
 }

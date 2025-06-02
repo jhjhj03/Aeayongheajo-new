@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHolder> {
-    private List<RecommendationResponse.Track> trackList;
+    private final List<RecommendationResponse.Track> trackList;
 
     public TrackAdapter(List<RecommendationResponse.Track> trackList) {
         this.trackList = trackList;
@@ -31,11 +31,15 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHol
     @Override
     public void onBindViewHolder(@NonNull TrackViewHolder holder, int position) {
         RecommendationResponse.Track track = trackList.get(position);
+
         holder.trackName.setText(track.name);
         holder.artistName.setText(track.artists.get(0).name);
-        Glide.with(holder.itemView.getContext())
-                .load(track.album.images.get(0).url)
-                .into(holder.albumImage);
+
+        if (track.album != null && track.album.images != null && !track.album.images.isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(track.album.images.get(0).url)
+                    .into(holder.albumImage);
+        }
     }
 
     @Override
