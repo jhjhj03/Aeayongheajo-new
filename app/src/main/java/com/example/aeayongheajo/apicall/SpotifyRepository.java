@@ -22,5 +22,4 @@ public class SpotifyRepository {
         Call<PlaylistTracksResponse> call = apiService.getPlaylistTracks(authHeader, playlistId);
         call.enqueue(callback);
     }
-
 }
