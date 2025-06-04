@@ -48,7 +48,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
        // Video 테이블 초기값 삽입
         db.execSQL("INSERT INTO Video (video_id, video_url, mood) VALUES (1, 'video_love.mp4', '국내 발라드_사랑');");
         db.execSQL("INSERT INTO Video (video_id, video_url, mood) VALUES (2, 'video_goodbye.mp4', '국내 발라드_이별');");
-//        db.execSQL("INSERT INTO Video (video_id, video_url, mood) VALUES (3, 'video_workout.mp4', '해외 팝_운동');");
+        db.execSQL("INSERT INTO Video (video_id, video_url, mood) VALUES (3, 'video_workout.mp4', '해외 팝_운동');");
     }
 
     @Override
