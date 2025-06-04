@@ -26,6 +26,10 @@
         <activity android:name=".activity.GenreActivity" android:exported="false"/>
         <activity android:name=".activity.RecommendResultActivity" android:exported="false"/>
         <activity android:name=".activity.PlaylistNameActivity" android:exported="false"/>
+        <activity android:name=".activity.MainActivity" android:exported="false"/>
+        <activity android:name=".activity.PlaylistListActivity" android:exported="false"/>
+        <activity android:name=".activity.PlaylistDetailActivity" android:exported="false"/>
+        <activity android:name=".activity.LoadingActivity" android:exported="false"/>
 
 
     </application>

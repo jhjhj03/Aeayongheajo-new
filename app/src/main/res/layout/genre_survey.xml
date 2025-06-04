@@ -72,6 +72,7 @@
             android:rowCount="6">
 
             <Button
+                android:id="@+id/ballad"
                 android:layout_width="0dp"
                 android:layout_height="65dp"
                 android:layout_columnWeight="1"
@@ -83,6 +84,7 @@
                 android:textSize="17sp" />
 
             <Button
+                android:id="@+id/pop"
                 android:layout_width="0dp"
                 android:layout_height="65dp"
                 android:layout_columnWeight="1"

@@ -2,6 +2,7 @@ package com.example.aeayongheajo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -31,8 +32,7 @@ public class PlaylistDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_base_toolbar_play);
 
-        // 1. 화면 요소 초기화
-        initViews();
+
 
         // 2. 이벤트 리스너 등록
         setListeners();
@@ -47,15 +47,7 @@ public class PlaylistDetailActivity extends AppCompatActivity {
     /**
      * XML 레이아웃에 정의된 View들을 찾아 초기화합니다.
      */
-    private void initViews() {
-        backButton = findViewById(R.id.backButton);
-        playButtonLayout = findViewById(R.id.playButtonLayout);
 
-        navHome = findViewById(R.id.navHome);
-        navBack = findViewById(R.id.navBack);
-        navNext = findViewById(R.id.navNext);
-        navPlaylist = findViewById(R.id.navPlaylist);
-    }
 
     /**
      * 사용자 이벤트에 대한 리스너를 설정합니다.
@@ -106,10 +98,11 @@ public class PlaylistDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("playlistId")) {
             String playlistId = intent.getStringExtra("playlistId");
-            // TODO: playlistId를 기반으로 데이터베이스 또는 API에서 해당 정보 불러오기
-            // 예: loadPlaylistById(playlistId);
+            String playlistTitle = intent.getStringExtra("playlistTitle");
+
         }
     }
+
 
     /**
      * (예정) 플레이리스트 상세 정보를 로딩하고 UI에 표시합니다.
@@ -119,5 +112,17 @@ public class PlaylistDetailActivity extends AppCompatActivity {
     private void loadPlaylistDetails() {
         // TODO: RecyclerView 또는 ScrollView를 이용해 플레이리스트 곡 정보를 동적으로 구성
         // 예: 서버에서 데이터를 받아오거나 로컬에 저장된 곡 리스트 출력
+    }
+
+    //뒤로가기
+    public void onBackClicked(View view) {
+        finish(); // 공통 동작
+    }
+
+    //홈으로 가기
+    public void onHomeClicked(View view) {
+        Intent intent = new Intent(this,  AppStartActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
     }
 }

@@ -38,13 +38,11 @@ public class AppStartActivity extends AppCompatActivity {
             }
         });
 
-       /* btnPlaylist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AppStart.this, PlaylistActivity.class);
-                startActivity(intent);
-            }
-        });*/
+        btnPlaylist.setOnClickListener(v -> {
+            Intent intent = new Intent(AppStartActivity.this, PlaylistListActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     //플레이리스트 가기

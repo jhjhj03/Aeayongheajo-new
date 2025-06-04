@@ -21,15 +21,8 @@ public class MoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mood_survey);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mood), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        String selectedGenre = getIntent().getStringExtra("genre");
+        selectedGenre = getIntent().getStringExtra("genre");
     }
 
 
@@ -61,11 +54,10 @@ public class MoodActivity extends AppCompatActivity {
         Button clickedButton = (Button) view;
         String selectedMood = clickedButton.getText().toString();
 
-
-       /* Intent intent = new Intent(this, 다음화면 Activity넣기 ex)ResultActivity.class);
+        Intent intent = new Intent(this, RecommendResultActivity.class);
         intent.putExtra("mood", selectedMood);
         intent.putExtra("genre", selectedGenre);
-        startActivity(intent);*/
+        startActivity(intent);
     }
 
 }

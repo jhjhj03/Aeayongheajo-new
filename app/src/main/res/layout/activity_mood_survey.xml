@@ -79,6 +79,7 @@
                 android:rowCount="6">
 
                 <Button
+                    android:id="@+id/btn_love"
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_columnWeight="1"
@@ -107,6 +108,7 @@
                     />
 
                 <Button
+                    android:id="@+id/btn_goodbye"
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_columnWeight="1"
@@ -135,6 +137,7 @@
                     />
 
                 <Button
+                    android:id="@+id/workout"
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_columnWeight="1"
