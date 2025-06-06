@@ -126,7 +126,8 @@
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:onClick="onGenreClick"
-                    android:text="국내 댄스/일렉"
+                    android:text="국내 댄스/
+                    일렉"
                     android:textColor="#000000"
                     android:textSize="17sp" />
 
