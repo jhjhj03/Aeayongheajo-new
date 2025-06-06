@@ -41,7 +41,73 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:contentDescription="플레이리스트 항목 목록입니다"/>
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F5F5F5"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="홈"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="이전"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="다음"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="플레이리스트"
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_list" />
+    </LinearLayout>
 
 
 </LinearLayout>

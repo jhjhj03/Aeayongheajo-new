@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,110 +21,117 @@ import com.example.aeayongheajo.R;
  */
 public class PlaylistDetailActivity extends AppCompatActivity {
 
-    // 상단 뒤로가기 버튼
     private ImageView backButton;
-
-    // 재생 버튼을 감싸는 레이아웃
     private LinearLayout playButtonLayout;
-
-    // 하단 네비게이션 바 아이콘들
     private ImageView navHome, navBack, navNext, navPlaylist;
+
+    private ImageView thumbnailImage;
+    private VideoView videoView;
+    private TextView titleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_base_toolbar_play);
 
+        // findViewById: 전역 필드와 연결
+        backButton = findViewById(R.id.backButton);
+        playButtonLayout = findViewById(R.id.playButtonLayout);
+        navHome = findViewById(R.id.navHome);
+        navBack = findViewById(R.id.navBack);
+        navNext = findViewById(R.id.navNext);
+        navPlaylist = findViewById(R.id.navPlaylist);
 
+        setListeners(); // 이렇게 마지막에 호출해야 함!
 
-        // 2. 이벤트 리스너 등록
+        thumbnailImage = findViewById(R.id.thumbnailImage);
+        videoView = findViewById(R.id.videoThumbnail);
+        titleView = findViewById(R.id.playlistTitle);
+
+        // 인텐트로부터 전달된 데이터 처리
+        Intent intent = getIntent();
+        String mood = intent.getStringExtra("mood");
+        String playlistTitle = intent.getStringExtra("playlistTitle");
+
+        int videoResId = R.raw.video_goodbye;  // 기본값
+        int imageResId = R.drawable.picture_goodbye;
+
+        if (mood != null) {
+            switch (mood.trim()) {
+                case "국내 발라드_사랑":
+                    videoResId = R.raw.video_love;
+                    imageResId = R.drawable.picture_love;
+                    break;
+                case "국내 발라드_이별":
+                    videoResId = R.raw.video_goodbye;
+                    imageResId = R.drawable.picture_goodbye;
+                    break;
+                case "해외 팝_운동":
+                    videoResId = R.raw.video_workout;
+                    imageResId = R.drawable.picture_workout;
+                    break;
+            }
+        }
+
+        // 썸네일과 제목 표시
+        thumbnailImage.setImageResource(imageResId);
+        titleView.setText(playlistTitle);
+
+        // MediaController 연결
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        // 재생 버튼 클릭 시 동작
+        int finalVideoResId = videoResId;
+        playButtonLayout.setOnClickListener(v -> {
+            thumbnailImage.setVisibility(View.GONE);
+            videoView.setVisibility(View.VISIBLE);
+            String videoPath = "android.resource://" + getPackageName() + "/" + finalVideoResId;
+            videoView.setVideoPath(videoPath);
+            videoView.start();
+        });
+
         setListeners();
-
-        // 3. 인텐트로 전달된 데이터 처리 (예: 어떤 플레이리스트인지 정보가 필요할 때)
-        handleIntentData();
-
-        // 4. 플레이리스트 항목 로딩 및 UI 표시 (추후 구현 예정)
-        // ex: loadPlaylistDetails();
     }
 
-    /**
-     * XML 레이아웃에 정의된 View들을 찾아 초기화합니다.
-     */
-
-
-    /**
-     * 사용자 이벤트에 대한 리스너를 설정합니다.
-     */
     private void setListeners() {
-        // 상단 뒤로가기 버튼: 현재 액티비티 종료
-        backButton.setOnClickListener(v -> {
-            finish();
-        });
+        backButton.setOnClickListener(v -> finish());
 
-        // 재생 버튼 클릭 시
-        playButtonLayout.setOnClickListener(v -> {
-            // TODO: MediaPlayer를 사용하여 실제 플레이리스트 음악 재생 구현 예정
-            Toast.makeText(this, "플레이리스트 재생 시작!", Toast.LENGTH_SHORT).show();
-        });
-
-        // 하단 네비게이션 바
         navHome.setOnClickListener(v -> {
-            // 메인 화면으로 이동
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         });
 
-        navBack.setOnClickListener(v -> {
-            // 기본 백 버튼 동작
-            onBackPressed();
-        });
+        navBack.setOnClickListener(v -> onBackPressed());
 
         navNext.setOnClickListener(v -> {
-            // 향후 기능 확장 예정
             Toast.makeText(this, "다음 곡 기능은 준비 중입니다", Toast.LENGTH_SHORT).show();
         });
 
         navPlaylist.setOnClickListener(v -> {
-            // 플레이리스트 목록으로 돌아가기
             Intent intent = new Intent(this, PlaylistListActivity.class);
             startActivity(intent);
             finish();
         });
     }
 
-    /**
-     * 인텐트로 전달된 데이터를 수신하여 처리합니다.
-     * 예: 선택된 플레이리스트의 ID나 이름 등
-     */
     private void handleIntentData() {
+        // 향후 확장용
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("playlistId")) {
             String playlistId = intent.getStringExtra("playlistId");
-            String playlistTitle = intent.getStringExtra("playlistTitle");
-
+            // 추후 playlistId 기반 DB 조회 가능
         }
     }
 
-
-    /**
-     * (예정) 플레이리스트 상세 정보를 로딩하고 UI에 표시합니다.
-     * - 실제 곡 리스트를 RecyclerView로 표시할 수 있음
-     * - 현재는 레이아웃 파일(layout_base_toolbar_play)에 TextView나 ListView가 있는지 확인 필요
-     */
-    private void loadPlaylistDetails() {
-        // TODO: RecyclerView 또는 ScrollView를 이용해 플레이리스트 곡 정보를 동적으로 구성
-        // 예: 서버에서 데이터를 받아오거나 로컬에 저장된 곡 리스트 출력
-    }
-
-    //뒤로가기
     public void onBackClicked(View view) {
-        finish(); // 공통 동작
+        finish();
     }
 
-    //홈으로 가기
     public void onHomeClicked(View view) {
-        Intent intent = new Intent(this,  AppStartActivity.class);
+        Intent intent = new Intent(this, AppStartActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }

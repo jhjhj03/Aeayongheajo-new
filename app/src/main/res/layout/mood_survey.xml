@@ -172,35 +172,63 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onHomeClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="홈"
-            android:src="@drawable/ic_home"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onBackClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="이전"
-            android:src="@drawable/ic_back"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onNextClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="다음"
-            android:src="@drawable/ic_next"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next" />
 
         <ImageView
-            android:layout_width="0dp"
+            android:onClick="onPlaylistClicked"
+            android:layout_width="4dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
             android:contentDescription="플레이리스트"
-            android:src="@drawable/ic_list"
-            android:scaleType="fitCenter" />
+            android:gravity="center"
+            android:maxWidth="20dp"
+            android:maxHeight="20dp"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_list" />
     </LinearLayout>
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -160,6 +161,26 @@ public class RecommendResultActivity extends AppCompatActivity {
                 Log.e("PLAYLIST_ERROR", t.getMessage());
             }
         });
+    }
+    //하단바 네비게이션
+    //홈으로 가기
+    public void onHomeClicked(View view) {
+        Intent intent = new Intent(this,  AppStartActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+    }
+    //뒤로가기
+    public void onBackClicked(View view) {
+        finish(); // 공통 동작
+    }
+    //다음버튼클릭
+    public void onNextClicked(View view) {
+        Toast.makeText(this, "플레이리스트 생성버튼을 눌러주세요", Toast.LENGTH_SHORT).show();
+    }
+    //플레이리스트 가기
+    public void onPlaylistClicked(View view) {
+        Intent intent = new Intent(this, PlaylistListActivity.class); // 이동할 화면 이름
+        startActivity(intent);
     }
 
 

@@ -45,9 +45,9 @@ public class AppStartActivity extends AppCompatActivity {
 
     }
 
-    //플레이리스트 가기
-    /*public void onPlaylistClicked(View view) {
-        Intent intent = new Intent(this, PlaylistActivity.class); // 이동할 화면 이름
-        startActivity(intent);
-    }*/
+//    //플레이리스트 가기
+//    public void onPlaylistClicked(View view) {
+//        Intent intent = new Intent(this, PlaylistListActivity.class); // 이동할 화면 이름
+//        startActivity(intent);
+//    }
 }

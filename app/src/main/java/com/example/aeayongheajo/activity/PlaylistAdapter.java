@@ -2,6 +2,7 @@ package com.example.aeayongheajo.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,26 +50,29 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ViewHo
         Playlist playlist = playlists.get(position);
 
         holder.textTitle.setText(playlist.getTitle());
+        Log.d("PlaylistAdapter", "Mood: [" + playlist.getMood() + "]");
 
-        switch (playlist.getMood()) {
-            case "사랑":
+        switch (playlist.getMood().trim()) {
+            case "국내 발라드_사랑":
                 holder.imgThumbnail.setImageResource(R.drawable.picture_love);
                 break;
-            case "이별":
+            case "국내 발라드_이별":
                 holder.imgThumbnail.setImageResource(R.drawable.picture_goodbye);
                 break;
-            case "운동":
+            case "해외 팝_운동":
                 holder.imgThumbnail.setImageResource(R.drawable.picture_workout);
                 break;
             default:
-                holder.imgThumbnail.setImageResource(R.drawable.picture_love);
+                holder.imgThumbnail.setImageResource(R.drawable.picture_bird);
                 break;
         }
+
 
         holder.btnPlay.setOnClickListener(v -> {
             Intent intent = new Intent(context, PlaylistDetailActivity.class);
             intent.putExtra("playlistId", playlist.getId());    // ID 전달
             intent.putExtra("playlistTitle", playlist.getTitle());  // 제목도 필요 시 전달
+            intent.putExtra("mood", playlist.getMood());
             context.startActivity(intent);
         });
     }
